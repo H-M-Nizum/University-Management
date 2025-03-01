@@ -1,0 +1,47 @@
+#### University Management Project #####
+
+Functional Requirements : 
+1. Authentication 
+    a. Student 
+        i. Student can login and logout securely
+        ii. Students can update their password.
+    b. Faculty 
+        i. Faculty can login and logout securely
+        ii. Facultys can update their password.
+    c. Admin 
+        i. Admin can login and logout securely
+        ii. Admins can update their password.
+2. Profile Management 
+    a. Student 
+        i. Student can manage and update their Profile
+        ii. Students can update certain fields
+    b. Faculty 
+        i. Faculty can manage and update their Profile
+        ii. Facultys can update certain fields
+    c. Admin 
+        i. Admin can manage and update their Profile
+        ii. Admins can update certain fields
+
+3. Academic Process
+    a. Student
+        i. Student can enroll a specific courses
+        ii. students can view their class schedule
+        iii. student can see their grades.
+        iv. Students can view notice board and events
+    b. Faculty
+        i. Faculty can manage student grades.
+        ii. Faculty can access students personal and academic information.
+    c. Admin
+        i. Admin can manage multiple Process.
+            1. Semester
+            2. courses
+            3. Offered courses
+            4. Section
+            5. Room
+            6. Building
+
+4. User Management
+    a. Admin 
+        i. Admin can manage multiple accounts
+        ii. Admin can block/unblock User.
+        iii. Admin can change user password

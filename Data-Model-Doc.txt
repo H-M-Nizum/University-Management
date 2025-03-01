@@ -1,9 +1,16 @@
 #### Data Model
+0. User
+    . id 
+    . password 
+    . needsPasswordChange
+    . role
+    . createdAt
+    . updatedAt
+    . isDeleted
 
 1. Student 
     . _id
-    . studentId
-    . password
+    . id
     . name
     . gender
     . dateOfBirth
@@ -23,8 +30,7 @@
 
 2. Faculty
     . _id
-    . studentId
-    . password
+    . id
     . name
     . gender
     . dateOfBirth
@@ -44,8 +50,7 @@
 
 3. Admin
     . _id
-    . studentId
-    . password
+    . id
     . name
     . gender
     . dateOfBirth
@@ -56,6 +61,7 @@
     . permanentAddress
     . profileImage
     . status
+    . designation
     . managementDepartment
     . isDeleted
     . createdAt

@@ -1,0 +1,62 @@
+#### Data Model
+
+1. Student 
+    . _id
+    . studentId
+    . password
+    . name
+    . gender
+    . dateOfBirth
+    . email
+    . contactNo
+    . emergencyContactNo
+    . presentAddress
+    . permanentAddress
+    . guardian
+    . localGuardian
+    . profileImage
+    . status
+    . academicDepartment
+    . isDeleted
+    . createdAt
+    . updatedAt
+
+2. Faculty
+    . _id
+    . studentId
+    . password
+    . name
+    . gender
+    . dateOfBirth
+    . email
+    . contactNo
+    . emergencyContactNo
+    . presentAddress
+    . permanentAddress
+    . profileImage
+    . status
+    . designation
+    . academicFaculty
+    . academicDepartment
+    . isDeleted
+    . createdAt
+    . updatedAt
+
+3. Admin
+    . _id
+    . studentId
+    . password
+    . name
+    . gender
+    . dateOfBirth
+    . email
+    . contactNo
+    . emergencyContactNo
+    . presentAddress
+    . permanentAddress
+    . profileImage
+    . status
+    . managementDepartment
+    . isDeleted
+    . createdAt
+    . updatedAt

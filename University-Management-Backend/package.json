@@ -23,6 +23,7 @@
     "cros": "^1.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "http-status": "^2.1.0",
     "mongoose": "^8.11.0",
     "node": "^23.9.0",
     "validator": "^13.12.0",

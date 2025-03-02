@@ -1,19 +1,14 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { userController } from './user.controller';
+import { AnyZodObject } from 'zod';
+import { studentValidations } from '../student/student.validation';
+import validationMiddleware from '../../middlwares/validateRequest';
 
 const router = express.Router();
 
-const validationMiddleware = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  console.log('I am a Validation Middleware. ');
-};
-
 router.post(
   '/create-student',
-  validationMiddleware,
+  validationMiddleware(studentValidations.createStudentValidationSchema),
   userController.createStudentController
 );
 

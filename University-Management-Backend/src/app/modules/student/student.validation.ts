@@ -33,27 +33,31 @@ const localguardianValidationSchema = z.object({
 });
 
 // Define the main Zod schema for StudentInterface
-const studentValidationSchema = z.object({
-  id: z.string(),
-  password: z.string(),
-  name: studentNameValidationSchema,
-  gender: z.enum(['male', 'female', 'other']),
-  email: z.string().email(),
-  age: z.number(),
-  contactNo: z.string().regex(/^\d{3}-\d{3}-\d{4}$/, {
-    message: 'Phone number must be in the format XXX-XXX-XXXX.',
+const createStudentValidationSchema = z.object({
+  body: z.object({
+    password: z.string(),
+    student: z.object({
+      name: studentNameValidationSchema,
+      gender: z.enum(['male', 'female', 'other']),
+      email: z.string().email(),
+      age: z.number(),
+      contactNo: z.string().regex(/^\d{3}-\d{3}-\d{4}$/, {
+        message: 'Phone number must be in the format XXX-XXX-XXXX.',
+      }),
+      dateOfBirth: z.string(),
+      emergencyContactNo: z.string(),
+      bloodGroup: z
+        .enum(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])
+        .optional(),
+      presentAddress: z.string(),
+      permanentAddress: z.string(),
+      guardian: guardianValidationSchema,
+      localaddress: localguardianValidationSchema,
+      profileimg: z.string().optional(),
+    }),
   }),
-  dateOfBirth: z.string(),
-  emergencyContactNo: z.string(),
-  bloodGroup: z
-    .enum(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])
-    .optional(),
-  presentAddress: z.string(),
-  permanentAddress: z.string(),
-  guardian: guardianValidationSchema,
-  localaddress: localguardianValidationSchema,
-  profileimg: z.string().optional(),
-  isDeleted: z.boolean(),
 });
 
-export default studentValidationSchema;
+export const studentValidations = {
+  createStudentValidationSchema,
+};

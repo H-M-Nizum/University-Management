@@ -66,3 +66,15 @@
     . isDeleted
     . createdAt
     . updatedAt
+
+
+4. Academic Semester
+	. name
+	. year
+	. code
+	. startMonth
+	. endMonth
+
+
+
+

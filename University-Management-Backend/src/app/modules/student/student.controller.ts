@@ -30,7 +30,21 @@ const GetSingleStudent = catchAsync(async (req, res) => {
   });
 });
 
+// Soft Delete one
+const DeleteSingleStudent = catchAsync(async (req, res) => {
+  const { studentID } = req.params;
+
+  const resultData = await StudentServices.DeleteSingleStudetnIntoDB(studentID);
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Successfully Delete Single Student Data',
+    data: resultData,
+  });
+});
+
 export const studentController = {
   GetAllStudent,
   GetSingleStudent,
+  DeleteSingleStudent,
 };

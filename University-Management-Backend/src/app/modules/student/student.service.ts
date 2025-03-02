@@ -13,8 +13,15 @@ const GetSingleStudentIntoDB = async (id: string) => {
   return result;
 };
 
+// Soft delete one student
+const DeleteSingleStudetnIntoDB = async (id: string) => {
+  const resutl = await studentModel.updateOne({ id }, { isDeleted: true });
+  return resutl;
+};
+
 // Export All Services
 export const StudentServices = {
   GetStudentIntoDB,
   GetSingleStudentIntoDB,
+  DeleteSingleStudetnIntoDB,
 };

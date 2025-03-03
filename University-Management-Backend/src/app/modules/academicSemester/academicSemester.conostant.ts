@@ -29,3 +29,10 @@ export const AcademicSemesterCodes: TAcademicSemestercode[] = [
   '02',
   '03',
 ];
+
+// Mapping for valid name-code combinations
+export const validNameCodeMap: Record<string, string> = {
+  Autumn: '01',
+  Summar: '02',
+  Fall: '03',
+};

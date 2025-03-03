@@ -4,6 +4,7 @@ import {
   AcademicSemesterCodes,
   AcademicSemesterMonths,
   AcademicSemesterNames,
+  validNameCodeMap,
 } from './academicSemester.conostant';
 
 const AcademicSemesterSchema = new Schema<TAcademicSemester>({
@@ -31,6 +32,30 @@ const AcademicSemesterSchema = new Schema<TAcademicSemester>({
     enum: AcademicSemesterMonths,
     required: true,
   },
+});
+
+// Handle academic semester logical validation
+AcademicSemesterSchema.pre('save', async function (next) {
+  // There cannot be more than one semester with the same name in the same academic year.
+  const isSemesterExists = await AcademicSemesterModel.findOne({
+    name: this.name,
+    year: this.year,
+  });
+
+  if (isSemesterExists) {
+    throw new Error('Semester is Already exists in this year !');
+  }
+
+  // Ensure name and code match correctly
+  if (validNameCodeMap[this.name] !== this.code) {
+    throw new Error(
+      `Invalid semester code for ${this.name}. Expected: ${
+        validNameCodeMap[this.name]
+      }`
+    );
+  }
+
+  next();
 });
 
 // Create academic semester model
